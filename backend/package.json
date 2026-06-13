@@ -1,0 +1,19 @@
+{
+  "name": "reloop-backend",
+  "version": "1.0.0",
+  "description": "Re:Loop Express.js Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.18.2",
+    "@aws-sdk/client-bedrock-runtime": "3.490.0",
+    "@aws-sdk/client-s3": "3.490.0",
+    "@aws-sdk/client-dynamodb": "3.490.0",
+    "@aws-sdk/lib-dynamodb": "3.490.0",
+    "cors": "2.8.5",
+    "dotenv": "16.3.1",
+    "multer": "1.4.5-lts.1"
+  }
+}

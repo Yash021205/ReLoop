@@ -1,0 +1,14 @@
+{
+  "name": "reloop",
+  "version": "1.0.0",
+  "description": "Amazon Re:Loop — AI-powered Return Intelligence Platform",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm start --workspace=backend"
+  }
+}
