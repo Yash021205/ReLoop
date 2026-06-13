@@ -128,7 +128,7 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - Register the error handler middleware after all routes
     - _Requirements: 5.2, 5.5, 1.3_
 
-- [ ] 8. Checkpoint - Backend verification
+- [x] 8. Checkpoint - Backend verification
   - Ensure all backend files are created and syntactically valid. Verify `npm install` and `npm start` would succeed. Ask the user if questions arise.
 
 - [x] 9. Set up frontend directory structure and configuration
@@ -181,11 +181,11 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - Create `frontend/src/hooks/useReturnFlow.js` exporting a named `useReturnFlow` function that returns `{}`
     - _Requirements: 8.3_
 
-- [ ] 12. Checkpoint - Frontend verification
+- [x] 12. Checkpoint - Frontend verification
   - Ensure all frontend files are created and syntactically valid. Verify the build would succeed. Ask the user if questions arise.
 
-- [ ] 13. Create technical design document
-  - [ ] 13.1 Create docs/TECHNICAL_DESIGN.md
+- [x] 13. Create technical design document
+  - [x] 13.1 Create docs/TECHNICAL_DESIGN.md
     - Create `docs/` directory at project root
     - Write `docs/TECHNICAL_DESIGN.md` including:
       - System architecture section with text-based diagram showing Frontend, Backend, Bedrock, S3, DynamoDB connections
@@ -197,7 +197,7 @@ Tasks are ordered so that root-level setup happens first, then backend and front
       - Environment variables section (variable names and purposes, no secret values)
     - _Requirements: 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8_
 
-- [ ] 14. Final checkpoint - Full scaffold verification
+- [x] 14. Final checkpoint - Full scaffold verification
   - Ensure all files are created, all JSON is valid, all JS/JSX is syntactically correct. Verify the complete scaffold matches requirements. Ask the user if questions arise.
 
 ## Notes
