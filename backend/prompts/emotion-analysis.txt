@@ -1,0 +1,8 @@
+# Module: Return Interception
+# Input Variables:
+#   productName
+#   returnReason
+#   customerExplanation
+# Expected Output: JSON with intentCategory, confidence, analysis
+
+[Write your emotion analysis prompt here]

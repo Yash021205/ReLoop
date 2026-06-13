@@ -1,0 +1,7 @@
+# Module: Explanation Layer
+# Input Variables:
+#   triageResult
+#   allModuleOutputs
+# Expected Output: JSON with explanation, factors, summary
+
+[Write your triage explanation prompt here]

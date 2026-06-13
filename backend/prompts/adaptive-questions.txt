@@ -1,0 +1,8 @@
+# Module: Adaptive Question Generation
+# Input Variables:
+#   productCategory
+#   returnReason
+#   inspectionResult
+# Expected Output: JSON with questions array (3-5 targeted diagnostic questions)
+
+[Write your adaptive questions prompt here]

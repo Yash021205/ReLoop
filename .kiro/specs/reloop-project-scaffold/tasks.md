@@ -54,43 +54,43 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - Set `env.node` to `true` and `env.es2021` to `true`
     - _Requirements: 4.3_
 
-- [ ] 4. Create backend API route, controller, and service stubs
-  - [ ] 4.1 Create intercept module stubs (route, controller, service)
+- [x] 4. Create backend API route, controller, and service stubs
+  - [x] 4.1 Create intercept module stubs (route, controller, service)
     - Create `backend/routes/interceptRoutes.js` exporting an Express Router with `POST /` route
     - Create `backend/controllers/interceptController.js` exporting async handler `(req, res)` that calls service and returns 501
     - Create `backend/services/interceptService.js` exporting async function accepting input object, returning `{}`
     - Wire route → controller → service chain
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-  - [ ] 4.2 Create inspect module stubs (route, controller, service)
+  - [x] 4.2 Create inspect module stubs (route, controller, service)
     - Create `backend/routes/inspectRoutes.js` exporting an Express Router with `POST /` route
     - Create `backend/controllers/inspectController.js` exporting async handler that calls service and returns 501
     - Create `backend/services/inspectService.js` exporting async function accepting input object, returning `{}`
     - Wire route → controller → service chain
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-  - [ ] 4.3 Create questions module stubs (route, controller, service)
+  - [x] 4.3 Create questions module stubs (route, controller, service)
     - Create `backend/routes/questionsRoutes.js` exporting an Express Router with `POST /` route
     - Create `backend/controllers/questionsController.js` exporting async handler that calls service and returns 501
     - Create `backend/services/questionsService.js` exporting async function accepting input object, returning `{}`
     - Wire route → controller → service chain
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-  - [ ] 4.4 Create verify module stubs (route, controller, service)
+  - [x] 4.4 Create verify module stubs (route, controller, service)
     - Create `backend/routes/verifyRoutes.js` exporting an Express Router with `POST /` route
     - Create `backend/controllers/verifyController.js` exporting async handler that calls service and returns 501
     - Create `backend/services/verifyService.js` exporting async function accepting input object, returning `{}`
     - Wire route → controller → service chain
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-  - [ ] 4.5 Create triage module stubs (route, controller, service)
+  - [x] 4.5 Create triage module stubs (route, controller, service)
     - Create `backend/routes/triageRoutes.js` exporting an Express Router with `POST /` route
     - Create `backend/controllers/triageController.js` exporting async handler that calls service and returns 501
     - Create `backend/services/triageService.js` exporting async function accepting input object, returning `{}`
     - Wire route → controller → service chain
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-  - [ ] 4.6 Create explain module stubs (route, controller, service)
+  - [x] 4.6 Create explain module stubs (route, controller, service)
     - Create `backend/routes/explainRoutes.js` exporting an Express Router with `POST /` route
     - Create `backend/controllers/explainController.js` exporting async handler that calls service and returns 501
     - Create `backend/services/explainService.js` exporting async function accepting input object, returning `{}`
@@ -98,19 +98,19 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
 - [ ] 5. Create backend middleware and utility placeholders
-  - [ ] 5.1 Create middleware placeholders
+  - [x] 5.1 Create middleware placeholders
     - Create `backend/middleware/errorHandler.js` exporting function with signature `(err, req, res, next)` that returns 500 with `{ error: "Internal Server Error" }`
     - Create `backend/middleware/upload.js` exporting a multer instance configured with memory storage
     - _Requirements: 9.1, 9.2_
 
-  - [ ] 5.2 Create utility client placeholders
+  - [x] 5.2 Create utility client placeholders
     - Create `backend/utils/bedrockClient.js` exporting `getBedrockClient` function that returns `null`
     - Create `backend/utils/s3Client.js` exporting `getS3Client` function that returns `null`
     - Create `backend/utils/dynamoClient.js` exporting `getDynamoClient` function that returns `null`
     - _Requirements: 9.3, 9.4, 9.5_
 
 - [ ] 6. Create backend prompt template files
-  - [ ] 6.1 Create all prompt template files
+  - [x] 6.1 Create all prompt template files
     - Create `backend/prompts/emotion-analysis.txt` for Return Interception module
     - Create `backend/prompts/inspection.txt` for Visual Inspection module
     - Create `backend/prompts/adaptive-questions.txt` for Adaptive Question Generation module
@@ -157,7 +157,7 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - _Requirements: 3.4, 3.5, 3.6_
 
 - [ ] 10. Create frontend page placeholders
-  - [ ] 10.1 Create all page components
+  - [x] 10.1 Create all page components
     - Create `frontend/src/pages/LandingPage.jsx` — default export React functional component rendering `<h1>Landing Page</h1>`
     - Create `frontend/src/pages/ReturnFormPage.jsx` — default export rendering `<h1>Return Form</h1>`
     - Create `frontend/src/pages/ImageUploadPage.jsx` — default export rendering `<h1>Image Upload</h1>`
@@ -166,7 +166,7 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - Each component must render without props, context, or external state
     - _Requirements: 7.1, 7.2, 7.3_
 
-  - [ ] 10.2 Create App.jsx with routing
+  - [x] 10.2 Create App.jsx with routing
     - Create `frontend/src/App.jsx` with `BrowserRouter`, `Routes`, and one `Route` per page
     - Routes: `/` → LandingPage, `/return` → ReturnFormPage, `/upload` → ImageUploadPage, `/questions` → QuestionsPage, `/results` → ResultsDashboardPage
     - _Requirements: 2.4_

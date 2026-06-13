@@ -1,0 +1,8 @@
+# Module: Claim Verification
+# Input Variables:
+#   customerClaim
+#   inspectionFindings
+#   questionResponses
+# Expected Output: JSON with consistency_score, verification_summary, claim_status
+
+[Write your claim verification prompt here]

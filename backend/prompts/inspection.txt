@@ -1,0 +1,7 @@
+# Module: Visual Inspection
+# Input Variables:
+#   imageBase64
+#   productName
+# Expected Output: JSON with condition_score, damage_detected, damage_summary, packaging_score, accessory_completeness
+
+[Write your visual inspection prompt here]
