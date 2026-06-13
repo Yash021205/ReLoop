@@ -121,8 +121,8 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - Include placeholder text in body indicating where developer writes the prompt
     - _Requirements: 6.1, 6.2, 6.3, 6.4_
 
-- [ ] 7. Wire backend routes into server.js
-  - [ ] 7.1 Register all route modules in server.js
+- [x] 7. Wire backend routes into server.js
+  - [x] 7.1 Register all route modules in server.js
     - Import all 6 route modules into `server.js`
     - Mount each route at its respective path: `/api/intercept`, `/api/inspect`, `/api/questions`, `/api/verify`, `/api/triage`, `/api/explain`
     - Register the error handler middleware after all routes
@@ -171,13 +171,13 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - Routes: `/` → LandingPage, `/return` → ReturnFormPage, `/upload` → ImageUploadPage, `/questions` → QuestionsPage, `/results` → ResultsDashboardPage
     - _Requirements: 2.4_
 
-- [ ] 11. Create frontend service and hook placeholders
-  - [ ] 11.1 Create API service file
+- [x] 11. Create frontend service and hook placeholders
+  - [x] 11.1 Create API service file
     - Create `frontend/src/services/api.js` with named export stub functions: `intercept`, `inspect`, `questions`, `verify`, `triage`, `explain`
     - Each function accepts a single object parameter and returns `Promise.resolve({})`
     - _Requirements: 8.1, 8.2_
 
-  - [ ] 11.2 Create useReturnFlow hook
+  - [x] 11.2 Create useReturnFlow hook
     - Create `frontend/src/hooks/useReturnFlow.js` exporting a named `useReturnFlow` function that returns `{}`
     - _Requirements: 8.3_
 
