@@ -19,7 +19,7 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - Create `.gitignore` at project root excluding `node_modules/`, `.env`, `dist/`, `.DS_Store`, and `Thumbs.db`
     - _Requirements: 11.1, 11.5_
 
-- [ ] 2. Set up backend directory structure and server
+- [x] 2. Set up backend directory structure and server
   - [x] 2.1 Create backend directory structure with .gitkeep files
     - Create `backend/` directory with subdirectories: `routes/`, `controllers/`, `services/`, `middleware/`, `utils/`, `prompts/`
     - Place an empty `.gitkeep` file inside each subdirectory
@@ -31,7 +31,7 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - List exact (pinned) versions for dependencies: `express`, `@aws-sdk/client-bedrock-runtime`, `@aws-sdk/client-s3`, `@aws-sdk/client-dynamodb`, `@aws-sdk/lib-dynamodb`, `cors`, `dotenv`, `multer`
     - _Requirements: 1.4_
 
-  - [ ] 2.3 Create backend server.js
+  - [x] 2.3 Create backend server.js
     - Import `express`, `cors`, and `dotenv`
     - Call `dotenv.config()`
     - Initialize Express app and register `cors()` middleware
@@ -39,17 +39,17 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - Add `app.listen(PORT)` call with console log confirming port
     - _Requirements: 1.3, 1.5_
 
-- [ ] 3. Set up backend configuration files
-  - [ ] 3.1 Create backend .env.example
+- [x] 3. Set up backend configuration files
+  - [x] 3.1 Create backend .env.example
     - List all required environment variables with placeholder values: `PORT`, `AWS_REGION`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `S3_BUCKET_NAME`, `DYNAMODB_TABLE_NAME`, `BEDROCK_MODEL_ID`
     - Include comments indicating expected format for each variable
     - _Requirements: 4.1_
 
-  - [ ] 3.2 Create backend .gitignore
+  - [x] 3.2 Create backend .gitignore
     - Exclude `node_modules/`, `.env`, and `dist/`
     - _Requirements: 4.2_
 
-  - [ ] 3.3 Create backend .eslintrc.json
+  - [x] 3.3 Create backend .eslintrc.json
     - Configure with `eslint:recommended` extends
     - Set `env.node` to `true` and `env.es2021` to `true`
     - _Requirements: 4.3_
@@ -131,7 +131,7 @@ Tasks are ordered so that root-level setup happens first, then backend and front
 - [ ] 8. Checkpoint - Backend verification
   - Ensure all backend files are created and syntactically valid. Verify `npm install` and `npm start` would succeed. Ask the user if questions arise.
 
-- [ ] 9. Set up frontend directory structure and configuration
+- [x] 9. Set up frontend directory structure and configuration
   - [x] 9.1 Create frontend directory structure with .gitkeep files
     - Create `frontend/` directory with subdirectories: `src/pages/`, `src/components/`, `src/services/`, `src/hooks/`
     - Place an empty `.gitkeep` file inside each subdirectory
@@ -144,13 +144,13 @@ Tasks are ordered so that root-level setup happens first, then backend and front
     - Add `dev` script for Vite dev server and `build` script for production build
     - _Requirements: 2.3_
 
-  - [ ] 9.3 Create frontend configuration files
+  - [x] 9.3 Create frontend configuration files
     - Create `frontend/vite.config.js` importing `@vitejs/plugin-react` and exporting config with React plugin
     - Create `frontend/tailwind.config.js` with content paths `./index.html` and `./src/**/*.{js,jsx}`
     - Create `frontend/postcss.config.js` with `tailwindcss` and `autoprefixer` plugins
     - _Requirements: 3.1, 3.2, 3.3_
 
-  - [ ] 9.4 Create frontend entry point files
+  - [x] 9.4 Create frontend entry point files
     - Create `frontend/index.html` with `<div id="root"></div>` and `<script type="module" src="/src/main.jsx"></script>`
     - Create `frontend/src/main.jsx` importing React, ReactDOM, App component, and index.css, rendering App into root element
     - Create `frontend/src/index.css` with the three Tailwind directives (`@tailwind base`, `@tailwind components`, `@tailwind utilities`)
