@@ -8,24 +8,33 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
  * @param {string} systemPrompt - The system-level instruction.
  * @param {string} userMessage  - The user-level message/data payload.
  * @param {boolean} jsonMode    - Whether to request response in JSON format.
+ * @param {Array<{mimeType: string, data: string}>} images - Optional array of base64 images.
  * @returns {Promise<string>}   - The model's text response.
  */
-async function converse(systemPrompt, userMessage, jsonMode = false) {
+async function converse(systemPrompt, userMessage, jsonMode = false, images = []) {
   if (!GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY is not set in environment variables.');
   }
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
 
+  const parts = [{ text: userMessage }];
+  if (images && images.length > 0) {
+    images.forEach(img => {
+      parts.push({
+        inlineData: {
+          mimeType: img.mimeType,
+          data: img.data
+        }
+      });
+    });
+  }
+
   const body = {
     contents: [
       {
         role: 'user',
-        parts: [
-          {
-            text: userMessage
-          }
-        ]
+        parts: parts
       }
     ]
   };

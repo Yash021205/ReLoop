@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const { randomUUID } = require('crypto');
 const repo = require('../db/repository');
 const gemini = require('./geminiService');
@@ -285,8 +287,71 @@ function computeVision(returnDoc) {
 }
 
 async function runVision(returnId) {
-  await simulateDelay(1500, 3000);
   const returnDoc = await getReturnOrThrow(returnId);
+  const images = [];
+
+  if (returnDoc.uploadedImages && returnDoc.uploadedImages.length > 0) {
+    for (const img of returnDoc.uploadedImages) {
+      try {
+        const filePath = path.join(__dirname, '../uploads', returnId, img.filename);
+        if (fs.existsSync(filePath)) {
+          const data = fs.readFileSync(filePath).toString('base64');
+          images.push({ mimeType: img.mimetype, data });
+        }
+      } catch (err) {
+        console.warn('Failed to read image file:', img.filename, err);
+      }
+    }
+  }
+
+  if (images.length > 0) {
+    try {
+      const systemPrompt = `You are the Re:Loop AI Vision Inspector. You are analyzing images of a returned product.
+RULES:
+- Evaluate the product's visual condition, packaging, and functionality based ONLY on the images.
+- CRITICAL DEMO RULE: If the images are low quality, blurry, or ambiguous, you MUST give the product the benefit of the doubt and assume it matches the customer's claim. Do NOT hallucinate defects that are not clearly visible.
+- Output JSON ONLY in this format:
+{
+  "visual_score": <0-100>,
+  "damage_detected": <boolean>,
+  "packaging_score": <0-100>,
+  "functionality_score": <0-100>,
+  "accessories_present": <boolean>,
+  "confidence": <0-100>,
+  "details": [
+    { "area": "Body", "status": "description", "severity": "none/minor/medium/severe" }
+  ]
+}`;
+      const userMessage = `PRODUCT: ${returnDoc.productName}
+CUSTOMER RETURN REASON: ${returnDoc.reason}
+CUSTOMER EXPLANATION: ${returnDoc.explanation}
+
+Analyze the provided images and score the condition. Remember the Demo Rule: if unsure, assume the product is in good condition unless the customer claimed otherwise.`;
+
+      console.log(`[Vision] Calling Gemini with ${images.length} images for return ${returnId}...`);
+      const raw = await gemini.converse(systemPrompt, userMessage, true, images);
+      const vision = JSON.parse(raw);
+      
+      const finalVision = {
+        visual_score: clamp(vision.visual_score || 90),
+        damage_detected: !!vision.damage_detected,
+        packaging_score: clamp(vision.packaging_score || 90),
+        functionality_score: clamp(vision.functionality_score || 90),
+        accessories_present: !!vision.accessories_present,
+        confidence: clamp(vision.confidence || 85),
+        details: vision.details || []
+      };
+
+      await repo.updateItem('Returns', returnId, { visionResult: finalVision, status: 'Vision Complete' });
+      return finalVision;
+    } catch (aiError) {
+      console.warn(`[Vision] Gemini call failed, falling back to simulated algorithm:`, aiError.message);
+    }
+  } else {
+    await simulateDelay(1500, 3000);
+  }
+
+  // Fallback
   const vision = computeVision(returnDoc);
   await repo.updateItem('Returns', returnId, { visionResult: vision, status: 'Vision Complete' });
   return vision;
