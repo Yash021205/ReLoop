@@ -35,7 +35,7 @@
 
 ## 🚀 Live Demo
 
-**Frontend (Vercel):** [https://re-loop-ocu1m44el-yash-wani-s-projects.vercel.app](https://re-loop-ocu1m44el-yash-wani-s-projects.vercel.app)
+**Frontend (Vercel):** [https://re-loop-seven.vercel.app](https://re-loop-seven.vercel.app)
 
 **Backend API (AWS EC2):** `http://16.170.40.115:3001`
 
