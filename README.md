@@ -514,8 +514,8 @@ npm run dev          # http://localhost:5173
 
 | Role | Email | Password |
 |------|-------|----------|
-| Customer | `demo@reloop.in` | `demo123` |
-| Admin | `admin@reloop.in` | `admin123` |
+| Customer | `customer@reloop.com` | `customer` |
+| Admin | `admin@reloop.com` | `admin` |
 
 ---
 
