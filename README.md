@@ -33,6 +33,17 @@
 
 ---
 
+## 🚀 Live Demo
+
+**Frontend (Vercel):** [https://re-loop-ocu1m44el-yash-wani-s-projects.vercel.app](https://re-loop-ocu1m44el-yash-wani-s-projects.vercel.app)
+**Backend API (AWS EC2):** `http://16.170.40.115:3001`
+
+> [!WARNING]
+> **Important Note for Judges**: Because the backend is hosted on a free AWS EC2 instance without an SSL certificate (`http`), modern browsers may block the data from loading due to "Mixed Content" policies. 
+> 
+> **To view the live data:** Click the **Lock (or Settings) icon** next to the URL in your browser, go to **Site Settings**, and change **Insecure content** to **Allow**. Refresh the page, and the AI pipeline will fully populate!
+
+---
 ## Executive Summary
 
 Amazon returns are not just a logistics problem — they are a **value‑recovery problem**.
