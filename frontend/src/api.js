@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3001/api';
+const API_BASE = 'http://16.170.40.115:3001/api'; // Hardcoded for demo stability
 
 function getAuthHeaders(headers = {}) {
   const storedUser = localStorage.getItem('reloop_user');
